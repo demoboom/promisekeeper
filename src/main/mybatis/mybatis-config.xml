@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--    <typeAliases>-->
+<!--        <typeAlias alias="Auser" type="com.po.Auser"/>-->
+<!--        <typeAlias alias="Goods" type="com.po.Goods"/>-->
+<!--        <typeAlias alias="GoodsType" type="com.po.GoodsType"/>-->
+<!--        <typeAlias alias="Notice" type="com.po.Notice"/>-->
+<!--        <typeAlias alias="Buser" type="com.po.Buser"/>-->
+<!--        <typeAlias alias="Order" type="com.po.Order"/>-->
+<!--    </typeAliases>-->
+    <mappers>
+        <!-- 告诉MyBatis到哪里去找映射文件 -->
+        <mapper resource="mybatis/admin/AdminGoodsMapper.xml" />
+    </mappers>
+</configuration>

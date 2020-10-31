@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>注册界面</title>
 <style type="text/css">
-	body{background: url("背景.jpg") no-repeat center;background-size: 200% }
+	body{background: url("/images/背景.jpg") no-repeat center;background-size: 200% }
 	label{display:inline-block;  width:100px; text-align: left ;font-size: 20px}
 	.div{position:absolute; top:30%;left:50%; margin-top:-100px; margin-left:-200px;}
 	.div1{border: outset 5px; width: 400px;letter-spacing: 2px;line-height: 5px}
@@ -23,12 +23,12 @@
 	<p id="dl">已有账号？<a href="login.jsp">登录</a></p>
 	</div>
 	<div class="div2">
-	<form >
+	<form action="/user/register" method="post">
 	<table>
 	<tr>
 	<td>
 	<label>用户名：</label>
-	<input required type="text" name="uname" placeholder="输入用户名" id="sr">
+	<input required type="text" name="uid" placeholder="输入用户名" id="sr">
 	</td>
 	</tr>
 	<tr>
@@ -56,8 +56,8 @@
 	<tr>
 	<td>
 	<label>密 码：</label>
-	<input required type="password" name="password" id="sr" placeholder="输入以设置你的密码">
-	</td
+	<input required type="password" name="upwd" id="sr" placeholder="输入以设置你的密码">
+	</td>
 	</tr>
 	<tr>
 	<td>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>登录界面</title>
 <style type="text/css">
-	body{background: url("背景.jpg") no-repeat center;background-size: 100%}
+	body{background: url("/images/背景.jpg") no-repeat center;background-size: 100%}
 	#header{width: 100%;height:150px;}
 	#left{width: 60%;height: 100%;float: left}
 	#right{width: 40%;height: 100%;float: left;font-size: 20px;margin: 20px 0px 0px 0px}
@@ -17,17 +17,17 @@
 <body>
 	<div id="header"></div>
 	<div id="left">
-		<img src="约吧.png">
+		<img src="/images/约吧.png">
 	</div>
 	<div id="right">
-		<form>
+		<form action="/user/login" method="post">
 		<legend align="center">登 录 界 面</legend>
 			<table align="center" border="5px" width="250px" height="200px">
 			<tr>
-				<td id="zi">用户名：<br><input name="uname" type="text" id="input"></td>
+				<td id="zi">用户名：<br><input name="uid" type="text" id="input"></td>
 			</tr>
 			<tr>
-				<td id="zi">密  码： <br><input name="password" type="password" id="input"></td>
+				<td id="zi">密  码： <br><input name="upwd" type="password" id="input"></td>
 			</tr>
 			<tr align="center" height="20px">
 				<td >

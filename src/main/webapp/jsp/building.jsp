@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <title>新建约定</title>
 <style type="text/css">
-	body{background: url("背景1.jpg");padding: 0;margin: 0}
+	body{background: url("/images/背景1.jpg");padding: 0;margin: 0}
 	label{display:inline-block;  width:150px; text-align: left ;font-size: 25px;margin-left: 10%;margin-right: 5%}
 	#div1{margin-left: 13%;margin-right: 20%;margin-top: 3%;margin-bottom: 5%}
 	#sr{width: 350px;height: 40px;font-size: 15px}
 	#tr{width: 350px;height: 100px;}
 	#xz{height: 40px; font-size: 15px}
 	#bt{height: 40px;font-size: 20px}
-	#xj{align="left" ;font-size: 20px}
+	#xj{align:"left" ;font-size: 20px}
 	</style>
 </head>
 

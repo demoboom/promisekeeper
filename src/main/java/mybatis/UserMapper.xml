@@ -2,11 +2,11 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dao.UserDao">
-	<select id="login"  resultType="Buser" parameterType="Buser">
-		select * from busertable where bemail =  #{bemail} and bpwd = #{bpwd}
+<mapper namespace="dao.UserDao">
+	<select id="login"  resultType="User" parameterType="User">
+		select * from user where uid =  #{uid} and upwd = #{upwd}
 	</select>
-	<insert id="register" parameterType="Buser">
-		insert into busertable (id, bemail, bpwd) values (null, #{bemail}, #{bpwd})
+	<insert id="register" parameterType="User">
+		insert into user (uid, upwd) values (#{uid}, #{upwd})
 	</insert>
 </mapper>

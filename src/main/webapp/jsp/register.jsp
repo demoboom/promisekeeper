@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>注册界面</title>
 <style type="text/css">
-	body{background: url("/images/背景.jpg") no-repeat center;background-size: 200% }
+	body{background: url("/images/bg.jpg") no-repeat center;background-size: 200% }
 	label{display:inline-block;  width:100px; text-align: left ;font-size: 20px}
 	.div{position:absolute; top:30%;left:50%; margin-top:-100px; margin-left:-200px;}
 	.div1{border: outset 5px; width: 400px;letter-spacing: 2px;line-height: 5px}

@@ -5,12 +5,12 @@
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="
-       http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context.xsd
-       http://www.springframework.org/schema/mvc
-       http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <!-- 使用扫描机制，扫描控制器类 -->
     <context:component-scan base-package="controller" />
     <mvc:annotation-driven />
@@ -18,15 +18,13 @@
      和 AnnotationMethodHandlerAdapter -->
     <!-- 使用 resources 过滤掉不需要 dispatcherservlet 的资源
     （即静态资源，例如 css、 js、 html、 images ）。 在使用 resources 时必须使用 annotation-driven，
-    否则 resources 元素会阻止任意控 制器被调用。 -->
-    <mvc:resources location="/css/" mapping="/css/**"></mvc:resources>
+    否则 resources 元素会阻止任意控制器被调用。 -->
     <mvc:resources location="/images/" mapping="/images/**"></mvc:resources>
-    <mvc:resources location="/logos/" mapping="/logos/**"></mvc:resources>
     <!-- 配置视图解析器 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           id="internalResourceViewResolver">
         <!-- 前缀 -->
-        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="prefix" value="/jsp/" />
         <!-- 后缀 -->
         <property name="suffix" value=".jsp" />
     </bean>

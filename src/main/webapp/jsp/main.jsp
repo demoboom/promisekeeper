@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <title>主界面</title>
 <style type="text/css">
-	body{background: url("/images/背景2.jpg");padding: 0; margin: 0}
+	body{background: url("/images/bg2.jpg");padding: 0; margin: 0}
 	li {float: left;}
 	li a {display: block;color: white;text-align: center;padding: 14px 16px;text-decoration: none;}
 	li a:hover{background-color: #111}
 	li a:visited{background-color: #111}
 	#div1{width: 100%;height: 20px;float: right}
-	#div2{width: 100%;height: 80px; background: url("/images/导航.png") no-repeat}
+	#div2{width: 100%;height: 80px; background: url("/images/title2.png") no-repeat}
 	#div3{text-align: center}
 	#search1{outline-style: none;border-radius: 5px;border: 2px thin;height: 25px;width:350px;margin-top: 5px;padding: 5px}
 	#search2{outline-style: none;border-radius: 5px;border: 3px outset;height: 30px;width:50px;margin-top: 5px}

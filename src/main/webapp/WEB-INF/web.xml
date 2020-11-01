@@ -8,6 +8,9 @@
         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
         id="WebApp_ID" version="3.1">
+  <welcome-file-list>
+    <welcome-file>/jsp/login.jsp</welcome-file>
+  </welcome-file-list>
   <!-- 实例化ApplicationContext容器 -->
   <context-param>
     <!-- 加载src目录下的applicationContext.xml文件 -->
@@ -26,6 +29,10 @@
   <servlet>
     <servlet-name>springmvc</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:springmvc-servlet.xml</param-value>
+    </init-param>
     <!-- 表示容器在启动时立即加载servlet -->
     <load-on-startup>1</load-on-startup>
   </servlet>

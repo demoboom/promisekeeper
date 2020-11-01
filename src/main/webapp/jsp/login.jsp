@@ -1,10 +1,15 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>登录界面</title>
 <style type="text/css">
-	body{background: url("/images/背景.jpg") no-repeat center;background-size: 100%}
+	body{background: url("${pageContext.request.contextPath}/images/bg.jpg") no-repeat center;background-size: 100%}
 	#header{width: 100%;height:150px;}
 	#left{width: 60%;height: 100%;float: left}
 	#right{width: 40%;height: 100%;float: left;font-size: 20px;margin: 20px 0px 0px 0px}
@@ -17,17 +22,17 @@
 <body>
 	<div id="header"></div>
 	<div id="left">
-		<img src="/images/约吧.png">
+		<img src="/images/title3.png">
 	</div>
 	<div id="right">
-		<form action="/user/login" method="post">
+		<form action="${pageContext.request.contextPath}/user/login" method="post">
 		<legend align="center">登 录 界 面</legend>
 			<table align="center" border="5px" width="250px" height="200px">
 			<tr>
 				<td id="zi">用户名：<br><input name="uid" type="text" id="input"></td>
 			</tr>
 			<tr>
-				<td id="zi">密  码： <br><input name="upwd" type="password" id="input"></td>
+				<td id="zi2">密  码： <br><input name="upwd" type="password" id="input2"></td>
 			</tr>
 			<tr align="center" height="20px">
 				<td >

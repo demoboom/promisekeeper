@@ -1,8 +1,4 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
 <!doctype html>
 <html>
 <head>
@@ -22,7 +18,7 @@
 <body>
 	<div id="header"></div>
 	<div id="left">
-		<img src="/images/title3.png">
+		<img src="${pageContext.request.contextPath}/images/title3.png">
 	</div>
 	<div id="right">
 		<form action="${pageContext.request.contextPath}/user/login" method="post">
@@ -39,7 +35,7 @@
 				<input type="submit" name="submit" value="登录">&nbsp;&nbsp;&nbsp;&nbsp;
 				<input type="reset" name="reset" value="重置">
 				<br>
-				<a href="register.jsp" id="size">新用户点此注册</a>
+				<a href="${pageContext.request.contextPath}/user/toregister" id="size">新用户点此注册</a>
 				</td>
 			</tr>
 			</table>

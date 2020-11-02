@@ -17,9 +17,15 @@ public class UserServiceImpl implements UserService{
     private UserDao userDao;
     @Override
     public String register(User user, Model model, HttpSession session) {
+        List<User> list = userDao.isExist(user);
+        if(list.size()>0){
+            model.addAttribute("msg", "用户已存在！");
+            return "register";
+        }
         int n = userDao.register(user);
         if(n > 0) {
-            return "before/login";
+            model.addAttribute("msg","注册成功！");
+            return "login";
         }else {
             model.addAttribute("msg", "注册失败！");
             return "register";

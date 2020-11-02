@@ -3,10 +3,13 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="dao.UserDao">
+	<select id="isExist"  resultType="User" parameterType="User">
+		select * from user where uid =  #{uid}
+	</select>
 	<select id="login"  resultType="User" parameterType="User">
 		select * from user where uid =  #{uid} and upwd = #{upwd}
 	</select>
 	<insert id="register" parameterType="User">
-		insert into user (uid, upwd) values (#{uid}, #{upwd})
+		insert into user values (#{uid}, #{upwd}, #{name}, #{sex}, #{age}, #{tel}, #{email})
 	</insert>
 </mapper>

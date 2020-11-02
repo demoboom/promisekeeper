@@ -15,6 +15,14 @@ import javax.servlet.http.HttpSession;
 public class UserController {
     @Autowired
     private UserService userService;
+    @RequestMapping("/toregister")
+    public String toregister(){
+        return "register";
+    }
+    @RequestMapping("/tologin")
+    public String tologin(){
+        return "login";
+    }
     @RequestMapping("/register")
     public String register(@ModelAttribute User user,Model model, HttpSession session) {
         return userService.register(user, model, session);

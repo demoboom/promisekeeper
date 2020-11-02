@@ -1,10 +1,11 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>注册界面</title>
 <style type="text/css">
-	body{background: url("/images/bg.jpg") no-repeat center;background-size: 200% }
+	body{background: url("${pageContext.request.contextPath}/images/bg.jpg") no-repeat center;background-size: 200% }
 	label{display:inline-block;  width:100px; text-align: left ;font-size: 20px}
 	.div{position:absolute; top:30%;left:50%; margin-top:-100px; margin-left:-200px;}
 	.div1{border: outset 5px; width: 400px;letter-spacing: 2px;line-height: 5px}
@@ -20,10 +21,10 @@
 	<div class="div">
 	<div class="div1">
 	<h1>欢迎注册</h1>
-	<p id="dl">已有账号？<a href="login.jsp">登录</a></p>
+	<p id="dl">已有账号？<a href="${pageContext.request.contextPath}/user/tologin">登录</a></p>
 	</div>
 	<div class="div2">
-	<form action="/user/register" method="post">
+	<form action="${pageContext.request.contextPath}/user/register" method="post">
 	<table>
 	<tr>
 	<td>
@@ -31,6 +32,12 @@
 	<input required type="text" name="uid" placeholder="输入用户名" id="sr">
 	</td>
 	</tr>
+		<tr>
+			<td>
+				<label>姓名：</label>
+				<input required type="text" name="name" placeholder="输入你的姓名"  id="sr">
+			</td>
+		</tr>
 	<tr>
 	<td>
 	<label>年 龄：</label>
@@ -40,7 +47,7 @@
 	<tr>
 	<td>
 	<label>性 别：</label>
-	<select required id="sex">
+	<select required name="sex" id="sex">
 	<option value="请选择">请选择</option>
 	<option value="男">男</option>
 	<option value="女">女</option>

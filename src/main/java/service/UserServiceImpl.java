@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService{
         }
         if(ruser != null) {
             session.setAttribute("user", ruser);
-            return "building";
+            return "forward:before";
         }else {
             model.addAttribute("msg", "用户名或密码错误！");
             return "login";

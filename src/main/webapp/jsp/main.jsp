@@ -26,7 +26,7 @@
 </head>
 <body>
 	<div id="div1">
-		<a href="https://www.baidu.com/">
+		<a href="${pageContext.request.contextPath}/user/exit">
 	<button class="quit" onClick="">退出</button></a>
 	<button class="quit" onClick="" value="我的约定">我的约定</button>
 	<button class="quit" onClick="" value="个人中心">个人中心</button>

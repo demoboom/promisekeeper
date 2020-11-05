@@ -6,7 +6,7 @@
     <typeAliases>
         <typeAlias alias="User" type="po.User"/>
 <!--        <typeAlias alias="Goods" type="po.Goods"/>-->
-<!--        <typeAlias alias="GoodsType" type="po.GoodsType"/>-->
+        <typeAlias alias="AppointmentType" type="po.AppointmentType"/>
 <!--        <typeAlias alias="Notice" type="po.Notice"/>-->
 <!--        <typeAlias alias="Buser" type="po.Buser"/>-->
 <!--        <typeAlias alias="Order" type="po.Order"/>-->
@@ -14,5 +14,6 @@
     <mappers>
         <!-- 告诉MyBatis到哪里去找映射文件 -->
         <mapper resource="mybatis/UserMapper.xml" />
+        <mapper resource="mybatis/IndexMapper.xml"/>
     </mappers>
 </configuration>

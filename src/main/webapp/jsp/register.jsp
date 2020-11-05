@@ -21,7 +21,7 @@
 	<div class="div">
 	<div class="div1">
 	<h1>欢迎注册</h1>
-	<p id="dl">已有账号？<a href="${pageContext.request.contextPath}/user/tologin">登录</a></p>
+	<p id="dl">已有账号？<a href="${pageContext.request.contextPath}/tologin">登录</a></p>
 	</div>
 	<div class="div2">
 	<form action="${pageContext.request.contextPath}/user/register" method="post">

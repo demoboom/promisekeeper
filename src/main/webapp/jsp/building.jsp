@@ -18,7 +18,7 @@
 
 <body>
 	<div>
-		<img src="导航.png" width="100%">
+		<img src="${pageContext.request.contextPath}/images/title2.png" width="100%">
 	</div>
 	<div id="div1">
 		<form>

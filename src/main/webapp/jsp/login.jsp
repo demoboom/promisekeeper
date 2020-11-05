@@ -35,7 +35,7 @@
 				<input type="submit" name="submit" value="登录">&nbsp;&nbsp;&nbsp;&nbsp;
 				<input type="reset" name="reset" value="重置">
 				<br>
-				<a href="${pageContext.request.contextPath}/user/toregister" id="size">新用户点此注册</a>
+				<a href="${pageContext.request.contextPath}/toregister" id="size">新用户点此注册</a>
 				</td>
 			</tr>
 			</table>

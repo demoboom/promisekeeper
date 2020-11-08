@@ -21,7 +21,7 @@
 		<img src="${pageContext.request.contextPath}/images/title2.png" width="100%">
 	</div>
 	<div id="div1">
-		<form>
+		<form action="${pageContext.request.contextPath}/appointment/build" method="post">
 		<fieldset>
 		<legend id="xj">新建约定</legend>
 		<table cellspacing="25px" width="800px">
@@ -30,8 +30,8 @@
 		<label>约定类别：</label>
 		<select  required id="xz">
 		<option value="请选择">请选择</option>
-		<option value="运动">运动</option>
 		<option value="学习">学习</option>
+		<option value="运动">运动</option>
 		<option value="娱乐">娱乐</option>
 		</select>
 		</td>
@@ -39,13 +39,13 @@
 		<tr>
 		<td>
 		<label>约定名称：</label>
-		<input required type="text" name="name" placeholder="输入你的约定的标题（不超过15个字）" maxlength="15" id="sr">
+		<input required type="text" name="title" placeholder="输入你的约定的标题（不超过15个字）" maxlength="15" id="sr">
 		</td>	
 		</tr>
 		<tr>
 		<td>
 		<label>约定时间：</label>	
-		<input required type="datetime-local" value="2020-01-01T23:59"  id="sr">
+		<input required type="datetime-local" value="2020-01-01T23:59" name="appointedtime" id="sr">
 		</td>
 		</tr>
 		<tr>

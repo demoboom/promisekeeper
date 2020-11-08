@@ -935,38 +935,99 @@ SELECT|sys.sys_config:null
 APPLICATION_PASSWORD_ADMIN,AUDIT_ADMIN,BACKUP_ADMIN,BINLOG_ADMIN,BINLOG_ENCRYPTION_ADMIN,CLONE_ADMIN,CONNECTION_ADMIN,ENCRYPTION_KEY_ADMIN,GROUP_REPLICATION_ADMIN,INNODB_REDO_LOG_ARCHIVE,PERSIST_RO_VARIABLES_ADMIN,REPLICATION_SLAVE_ADMIN,RESOURCE_GROUP_ADMIN,RESOURCE_GROUP_USER,ROLE_ADMIN,SERVICE_CONNECTION_ADMIN,SESSION_VARIABLES_ADMIN,SET_USER_ID,SYSTEM_USER,SYSTEM_VARIABLES_ADMIN,TABLE_ENCRYPTION_ADMIN,XA_RECOVER_ADMIN!
 </ObjectGrants>
     </user>
-    <table id="293" parent="8" name="user"/>
-    <column id="294" parent="293" name="uid">
+    <table id="293" parent="8" name="appointment"/>
+    <table id="294" parent="8" name="appointmenttype"/>
+    <table id="295" parent="8" name="user"/>
+    <column id="296" parent="293" name="aid">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="297" parent="293" name="typeid">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="298" parent="293" name="createtime">
+      <Position>3</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <column id="299" parent="293" name="title">
+      <Position>4</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </column>
+    <column id="300" parent="293" name="content">
+      <Position>5</Position>
+      <DataType>varchar(45)|0s</DataType>
+    </column>
+    <column id="301" parent="293" name="place">
+      <Position>6</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </column>
+    <column id="302" parent="293" name="appointedtime">
+      <Position>7</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <index id="303" parent="293" name="typeid_idx">
+      <ColNames>typeid</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="304" parent="293" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>aid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="305" parent="293" name="typeid">
+      <ColNames>typeid</ColNames>
+      <RefTableName>appointmenttype</RefTableName>
+      <RefColNames>typeid</RefColNames>
+    </foreign-key>
+    <column id="306" parent="294" name="typeid">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="307" parent="294" name="typename">
+      <Position>2</Position>
+      <DataType>varchar(10)|0s</DataType>
+    </column>
+    <key id="308" parent="294" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>typeid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="309" parent="295" name="uid">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="295" parent="293" name="upwd">
+    <column id="310" parent="295" name="upwd">
       <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="296" parent="293" name="name">
+    <column id="311" parent="295" name="name">
       <Position>3</Position>
       <DataType>varchar(10)|0s</DataType>
     </column>
-    <column id="297" parent="293" name="sex">
+    <column id="312" parent="295" name="sex">
       <Position>4</Position>
       <DataType>varchar(2)|0s</DataType>
     </column>
-    <column id="298" parent="293" name="age">
+    <column id="313" parent="295" name="age">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="299" parent="293" name="tel">
+    <column id="314" parent="295" name="tel">
       <Position>6</Position>
       <DataType>varchar(20)|0s</DataType>
     </column>
-    <column id="300" parent="293" name="email">
+    <column id="315" parent="295" name="email">
       <Position>7</Position>
       <DataType>varchar(20)|0s</DataType>
     </column>
-    <key id="301" parent="293" name="PRIMARY">
+    <key id="316" parent="295" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>uid</ColNames>
       <Primary>1</Primary>

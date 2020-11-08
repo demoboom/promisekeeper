@@ -1,5 +1,6 @@
 package service;
 
+import dao.AppointmentDao;
 import dao.IndexDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,10 +15,13 @@ import javax.servlet.http.HttpSession;
 public class IndexServiceImpl implements IndexService{
     @Autowired
     IndexDao indexDao;
+    @Autowired
+    AppointmentDao appointmentDao;
 
     @Override
     public String before(Model model, HttpSession session, AppointmentType appointmentType) {
         session.setAttribute("appointmentType", indexDao.selectAppointmentType());
+        session.setAttribute("appointment", appointmentDao.selectAppointment());
         return "main";
     }
 }

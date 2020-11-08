@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.AppointmentDao">
+    <insert id="build" parameterType="Appointment">
+        insert into appointment values (null, #{typeid}, #{createtime}, #{title}, #{content}, #{place}, #{appointedtime})
+    </insert>
+    <select id="selectAppointment" resultType="Appointment">
+        select * from appointment order by unix_timestamp(createtime) desc
+    </select>
+    <select id="selectAppointmentById" parameterType="Integer">
+        select * from appointment where typeid = #{typeid}
+    </select>
+</mapper>

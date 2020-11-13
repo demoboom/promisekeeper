@@ -1,51 +1,70 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page import="po.AppointmentType" %>
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>主界面</title>
-<style type="text/css">
-	body{background: url("/images/bg2.jpg");padding: 0; margin: 0}
-	li {float: left;}
-	li a {display: block;color: white;text-align: center;padding: 14px 16px;text-decoration: none;}
-	li a:hover{background-color: #111}
-	li a:visited{background-color: #111}
-	#div1{width: 100%;height: 20px;float: right}
-	#div2{width: 100%;height: 80px; background: url("/images/title2.png") no-repeat}
-	#div3{text-align: center}
-	#search1{outline-style: none;border-radius: 5px;border: 2px thin;height: 25px;width:350px;margin-top: 5px;padding: 5px}
-	#search2{outline-style: none;border-radius: 5px;border: 3px outset;height: 30px;width:50px;margin-top: 5px}
-	.quit{opacity:0.5;border-style: none;outline: #30368A;float: right;margin-right: 30px}
-	.dh{float: right;margin-top: 10px;margin-right: 100px;border-radius:12px;font-size: 15px;
-		height: 40px;width: 80px;color:white;
-		background-color:gray;border:none;outline: none
+	<meta charset="utf-8">
+	<title>main</title>
+	<style type="text/css">
+		body{background: url("${pageContext.request.contextPath}/images/背景2.jpg")repeat-x left top;}
+		.hold{width: 100%;height: 100%}
+		.top{line-height:20px; height:20px;}
+		.top_right{float: right;height: 20px;width: 100%}
+		.quit{opacity:0.5;border-style: none;outline: #30368A;float: right;margin-right: 30px}
+		.second{height: 80px;width: 100%}
+		.second_left{width: 30%;height: 100%;float: left}
+		.second_right{width: 70%;height: 100%;float: right}
+		.new{float: right;margin-top: 5px;margin-right: 100px;border-radius:12px;font-size: 15px;
+			height: 40px;width: 80px;color:black;
+			background-color:;border:none;outline: none
 		}
-	.dh:hover{box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)}
-	.ul1 { list-style:none;padding:0 80; margin: 0;overflow: hidden;background-color: gray;font-size: 25px}
-</style>
+		.new:hover{box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)}
+		.third{width: 100%;background-color: gray;height: 50px}
+		.third_left{width: 50%;float: left;background-color: gray}
+		.third_right{width: 50%;float: left;background-color: gray}
+		#search1{float: right; outline-style: none;border-radius: 5px;border: 3px outset;height: 40px;width:50px;margin-top: 20px;margin-right: 50px}
+		#search2{float: right; outline-style: none;border-radius: 5px;border: 2px thin;height: 40px;width:250px;margin-top: 15px;padding: 2px}
+		.ul1 { list-style:none;padding:0 80; margin:0;overflow: hidden;font-size: 36px;height: 100%;}
+		li {float: left}
+		li a {display: block;color: white;text-align: center;padding:0px 26px;text-decoration: none;}
+		li a:hover{background-color: #111}
+		li a:visited{background-color: #111}
+	</style>
 </head>
+
 <body>
-	<div id="div1">
-		<a href="${pageContext.request.contextPath}/user/exit">
-	<button class="quit" onClick="">退出</button></a>
-	<button class="quit" onClick="" value="我的约定">我的约定</button>
-	<button class="quit" onClick="" value="个人中心">个人中心</button>
+<div class="hold">
+	<!--最上面 -->
+	<div class="top">
+		<div class="top_right">
+			<a href="${pageContext.request.contextPath}/tologin"><button class="quit" onClick="">退出</button></a>
+			<a href="${pageContext.request.contextPath}/tologin"></a><button class="quit" onClick="" value="我的约定">我的约定</button>
+			<a href="${pageContext.request.contextPath}/tologin"></a><button class="quit" onClick="" value="个人中心">个人中心</button>
+		</div>
 	</div>
-	<div id="div2">
-	<button class="dh" value="新建" >新建约定</button>
+	<!-- 搜索栏 -->
+	<div class="second">
+		<div class="second_left"><img src="${pageContext.request.contextPath}/images/导航.png"></div>
+		<div class="second_right">
+			<input id="search1" type="button" value="搜索">
+			<input id="search2" placeholder="请输入......">
+		</div>
 	</div>
-	<div>
-	<ul class="ul1">
-	<li onClick="sports"><a href="javascript:void(0)" >运 动</a></li>
-	<li onClick="study"><a href="javascript:void(0)" >学 习</a></li>
-	<li onClick="amuse"><a href="javascript:void(0)" >娱 乐</a></li>
-	</ul>
+	<!-- 导航栏 -->
+	<div class="third">
+		<div class="third_left">
+			<ul class="ul1">
+				<li><a href="List<Appointment>" >全 部</a></li>
+				<c:forEach items="${typelist}" var="item">
+					<li><a href="before?typeid=${item.typeid}">${item.typename}</a></li>
+				</c:forEach>
+			</ul>
+		</div>
+		<div class="third_right">
+			<button class="new">新建约定</button>
+		</div>
 	</div>
-	<div id="div3">
-		<input id="search1" placeholder="请输入......">
-		<input id="search2" type="button" value="搜索">
-	</div>
-	<div>
-	</div>
+</div>
 </body>
 </html>

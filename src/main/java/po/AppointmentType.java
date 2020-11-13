@@ -1,22 +1,22 @@
 package po;
 
 public class AppointmentType {
-    private int aid;
-    private String aname;
+    private int typeid;
+    private String typename;
 
-    public int getAid() {
-        return aid;
+    public int getTypeid() {
+        return typeid;
     }
 
-    public void setAid(int aid) {
-        this.aid = aid;
+    public void setTypeid(int typeid) {
+        this.typeid = typeid;
     }
 
-    public String getAname() {
-        return aname;
+    public String getTypename() {
+        return typename;
     }
 
-    public void setAname(String aname) {
-        this.aname = aname;
+    public void setTypename(String typename) {
+        this.typename = typename;
     }
 }

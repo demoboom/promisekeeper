@@ -30,7 +30,22 @@
 		li a {display: block;color: white;text-align: center;padding:0px 26px;text-decoration: none;}
 		li a:hover{background-color: #111}
 		li a:visited{background-color: #111}
+		.black_overlay{display: none; position: absolute;top: 0%;left: 0%;width: 100%;height: 100%;background-color: #c8c8c8;z-index:1001;-moz-opacity: 0.8; opacity:.80; filter: alpha(opacity=78);}
+		.pop_win { display: none;position: absolute;top: 10%;left: 23%;width: 55%;height: 85%;padding: 10px; border: 2px solid rebeccapurple;background-color: white;z-index:9999;overflow: auto;}
+		.xj{align:"left" ;font-size: 20px}
+		.xz{height: 40px; font-size: 15px}
+		.bt{height: 40px;font-size: 20px}
+		.sr{width: 350px;height: 40px;font-size: 15px}
+		.tr{width: 350px;height: 100px;}
 	</style>
+	<script type="text/javascript">
+		function popWin(){
+			document.getElementById('light').style.display='block';
+			document.getElementById('fade').style.display='block'}
+		function closeWin() {
+			document.getElementById('light').style.display = 'none';
+			document.getElementById('fade').style.display = 'none'}
+	</script>
 </head>
 
 <body>
@@ -45,7 +60,7 @@
 	</div>
 	<!-- 搜索栏 -->
 	<div class="second">
-		<div class="second_left"><img src="${pageContext.request.contextPath}/images/导航.png"></div>
+		<div class="second_left"><img src="${pageContext.request.contextPath}/images/title2.png"></div>
 		<div class="second_right">
 			<input id="search1" type="button" value="搜索">
 			<input id="search2" placeholder="请输入......">
@@ -62,7 +77,65 @@
 			</ul>
 		</div>
 		<div class="third_right">
-			<button class="new">新建约定</button>
+			<button class="new" onclick="popWin()">新建约定</button>
+			<div id="light" class="pop_win">
+				<form action="${pageContext.request.contextPath}/appointment/build" method="post">
+					<fieldset>
+						<legend class="xj">新建约定</legend>
+						<table cellspacing="25px" width="800px">
+							<tr>
+								<td>
+									<label>约定类别：</label>
+									<select  required class="xz">
+										<option value="请选择">请选择</option>
+										<option value="运动">运动</option>
+										<option value="学习">学习</option>
+										<option value="娱乐">娱乐</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label>约定名称：</label>
+									<input required type="text" name="name" placeholder="输入你的约定的标题（不超过15个字）" maxlength="15" class="sr">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label>约定时间：</label>
+									<input required type="datetime-local" value="2020-01-01T23:59"  class="sr">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label>约定时长：</label>
+									<input required type="text" placeholder="输入活动进行的时长（2小时）"  class="sr">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label>约定地点：</label>
+									<input required type="text" placeholder="输入活动进行的地点"  class="sr">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label>备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注：</label>
+									<textarea name="beizhu" rows="4" cols="50" wrap="virtual"  class="tr"></textarea>
+								</td>
+							</tr>
+							<tr align="center">
+								<td>
+									<input type="submit" value="提交" class="bt">
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<input type="button" value="关闭" onClick="closeWin()" class="bt">
+								</td>
+							</tr>
+						</table>
+					</fieldset>
+				</form>
+			</div>
+			<div id="fade" class="black_overlay"></div>
 		</div>
 	</div>
 </div>

@@ -17,15 +17,15 @@
 		.second_right{width: 70%;height: 100%;float: right}
 		.new{float: right;margin-top: 5px;margin-right: 100px;border-radius:12px;font-size: 15px;
 			height: 40px;width: 80px;color:black;
-			background-color:;border:none;outline: none
+			border:none;outline: none
 		}
 		.new:hover{box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)}
 		.third{width: 100%;background-color: gray;height: 50px}
 		.third_left{width: 50%;float: left;background-color: gray}
 		.third_right{width: 50%;float: left;background-color: gray}
 		#search1{float: right; outline-style: none;border-radius: 5px;border: 3px outset;height: 40px;width:50px;margin-top: 20px;margin-right: 50px}
-		#search2{float: right; outline-style: none;border-radius: 5px;border: 2px thin;height: 40px;width:250px;margin-top: 15px;padding: 2px}
-		.ul1 { list-style:none;padding:0 80; margin:0;overflow: hidden;font-size: 36px;height: 100%;}
+		#search2{float: right; outline-style: none;border-radius: 5px;border: 2px;height: 40px;width:250px;margin-top: 15px;padding: 2px}
+		.ul1 { list-style:none;padding:0 80px; margin:0;overflow: hidden;font-size: 36px;height: 100%;}
 		li {float: left}
 		li a {display: block;color: white;text-align: center;padding:0px 26px;text-decoration: none;}
 		li a:hover{background-color: #111}

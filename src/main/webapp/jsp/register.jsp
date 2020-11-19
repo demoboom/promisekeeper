@@ -10,10 +10,10 @@
 	.div{position:absolute; top:30%;left:50%; margin-top:-100px; margin-left:-200px;}
 	.div1{border: outset 5px; width: 400px;letter-spacing: 2px;line-height: 5px}
 	.div2{border: inset 5px; width: 400px}
-	#dl{font-size: 15px;color: gray}
-	#sex{height: 30px}
-	#sr{width: 200px;height: 30px}
-	#bt{width: 45px;height: 30px;background: #89D2E0;font-size: 15px}
+	.dl{font-size: 15px;color: gray}
+	.sex{height: 30px}
+	.sr{width: 200px;height: 30px}
+	.bt{width: 45px;height: 30px;background: #89D2E0;font-size: 15px}
 </style>
 </head>
 
@@ -29,25 +29,25 @@
 	<tr>
 	<td>
 	<label>用户名：</label>
-	<input required type="text" name="uid" placeholder="输入用户名" id="sr">
+	<input required type="text" name="uid" placeholder="输入用户名" class="sr">
 	</td>
 	</tr>
 		<tr>
 			<td>
 				<label>姓名：</label>
-				<input required type="text" name="name" placeholder="输入你的姓名"  id="sr">
+				<input required type="text" name="name" placeholder="输入你的姓名"  class="sr">
 			</td>
 		</tr>
 	<tr>
 	<td>
 	<label>年 龄：</label>
-	<input required type="text" name="age" placeholder="输入你的年龄"  id="sr" maxlength="3" onkeyup="value=value.replace(/\D/g,'')">
+	<input required type="text" name="age" placeholder="输入你的年龄"  class="sr" maxlength="3" onkeyup="value=value.replace(/\D/g,'')">
 	</td>
 	</tr>
 	<tr>
 	<td>
 	<label>性 别：</label>
-	<select required name="sex" id="sex">
+	<select required name="sex" class="sex">
 	<option value="请选择">请选择</option>
 	<option value="男">男</option>
 	<option value="女">女</option>
@@ -57,25 +57,25 @@
 	<tr>
 	<td>
 	<label>手机号码：</label>
-	<input required type="text" name="tel" id="sr" placeholder="输入你的手机号码" maxlength="11" onkeyup="value=value.replace(/\D/g,'')">
+	<input required type="text" name="tel" class="sr" placeholder="输入你的手机号码" maxlength="11" onkeyup="value=value.replace(/\D/g,'')">
 	</td>
 	</tr>
 	<tr>
 	<td>
 	<label>密 码：</label>
-	<input required type="password" name="upwd" id="sr" placeholder="输入以设置你的密码">
+	<input required type="password" name="upwd" class="sr" placeholder="输入以设置你的密码">
 	</td>
 	</tr>
 	<tr>
 	<td>
 	<label>E-mail：</label>
-	<input required type="text" name="email" id="sr" placeholder="输入你的电子邮箱">
+	<input required type="text" name="email" class="sr" placeholder="输入你的电子邮箱">
 	</td>	
 	</tr>
 	<tr align="center">
 	<td>
-	<input type="submit" name="submit" value="注册" id="bt">&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="reset" name="reset" value="重置" id="bt">
+	<input type="submit" name="submit" value="注册" class="bt">&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="reset" name="reset" value="重置" class="bt">
 	</td>
 	</tr>
 	</table>

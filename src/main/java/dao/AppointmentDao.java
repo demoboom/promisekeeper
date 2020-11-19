@@ -11,5 +11,6 @@ import java.util.List;
 public interface AppointmentDao {
     public int build(Appointment appointment);
     public List<Appointment> selectAppointment();
-    public List<Appointment> selectAppointmentById(int id);
+    public List<Appointment> selectAppointmentByType(int id);
+    public List<Appointment> selectAppointmentByTitle(String msg);
 }

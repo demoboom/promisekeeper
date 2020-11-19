@@ -16,15 +16,22 @@ public class AppointmentServiceImpl implements AppointmentService {
     AppointmentDao appointmentDao;
 
     @Override
-    public String build(Appointment appointment, Model model) {
+    public String build(Appointment appointment, Model model, HttpSession session) {
         appointmentDao.build(appointment);
         model.addAttribute("msg","新建成功！");
+        session.setAttribute("appointment", appointmentDao.selectAppointment());
         return "main";
     }
 
     @Override
     public String select(int typeid, HttpSession session) {
-        session.setAttribute("appointment", appointmentDao.selectAppointmentById(typeid));
+        session.setAttribute("appointment", appointmentDao.selectAppointmentByType(typeid));
+        return "main";
+    }
+
+    @Override
+    public String search(String msg, HttpSession session) {
+        session.setAttribute("appointment", appointmentDao.selectAppointmentByTitle(msg));
         return "main";
     }
 }

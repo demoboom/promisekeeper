@@ -8,11 +8,11 @@ import java.util.Date;
 public class Appointment {
     private int aid;                //约定编号
     private int typeid;             //约定类型编号
-    private String createtime;      //约定创建时间
     private String title;           //标题
-    private String content;         //内容
-    private String place;           //地点
+    private String createtime;      //约定创建时间
     private String appointedtime;   //约定时间
+    private String place;           //地点
+    private String content;         //内容
 
     public int getAid() {
         return aid;
@@ -30,14 +30,6 @@ public class Appointment {
         this.typeid = typeid;
     }
 
-    public String getCreatetime() {
-        return createtime;
-    }
-
-    public void setCreatetime(String createtime) {
-        this.createtime = createtime;
-    }
-
     public String getTitle() {
         return title;
     }
@@ -46,12 +38,20 @@ public class Appointment {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
+    public String getCreatetime() {
+        return createtime;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setCreatetime(String createtime) {
+        this.createtime = createtime;
+    }
+
+    public String getAppointedtime() {
+        return appointedtime;
+    }
+
+    public void setAppointedtime(String appointedtime) {
+        this.appointedtime = appointedtime;
     }
 
     public String getPlace() {
@@ -62,11 +62,11 @@ public class Appointment {
         this.place = place;
     }
 
-    public String getAppointedtime() {
-        return appointedtime;
+    public String getContent() {
+        return content;
     }
 
-    public void setAppointedtime(String appointedtime) {
-        this.appointedtime = appointedtime;
+    public void setContent(String content) {
+        this.content = content;
     }
 }

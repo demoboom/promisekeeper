@@ -1,5 +1,6 @@
 package service;
 
+import dao.AppointmentDao;
 import dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,9 @@ import java.util.List;
 public class UserServiceImpl implements UserService{
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private AppointmentDao appointmentDao;
+
     @Override
     public String register(User user, Model model, HttpSession session) {
         List<User> list = userDao.isExist(user);
@@ -41,6 +45,7 @@ public class UserServiceImpl implements UserService{
         }
         if(ruser != null) {
             session.setAttribute("user", ruser);
+            session.setAttribute("appointment", appointmentDao.selectAppointment());
             return "forward:/before";
         }else {
             model.addAttribute("msg", "用户名或密码错误！");

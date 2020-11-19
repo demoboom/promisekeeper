@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<title>main</title>
 	<style type="text/css">
-		body{background: url("${pageContext.request.contextPath}/images/背景2.jpg")repeat-x left top;}
+		body{background: url("${pageContext.request.contextPath}/images/bg2.jpg")repeat-x left top;}
 		.hold{width: 100%;height: 100%}
 		.top{line-height:20px; height:20px;}
 		.top_right{float: right;height: 20px;width: 100%}
@@ -86,42 +86,36 @@
 							<tr>
 								<td>
 									<label>约定类别：</label>
-									<select  required class="xz">
+									<select name="typeid" required class="xz">
 										<option value="请选择">请选择</option>
-										<option value="运动">运动</option>
-										<option value="学习">学习</option>
-										<option value="娱乐">娱乐</option>
+										<option value="1">学习</option>
+										<option value="2">运动</option>
+										<option value="3">娱乐</option>
 									</select>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label>约定名称：</label>
-									<input required type="text" name="name" placeholder="输入你的约定的标题（不超过15个字）" maxlength="15" class="sr">
+									<label>约定标题：</label>
+									<input required type="text" name="title" placeholder="输入你的约定的标题（不超过15个字）" maxlength="15" class="sr">
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<label>约定时间：</label>
-									<input required type="datetime-local" value="2020-01-01T23:59"  class="sr">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label>约定时长：</label>
-									<input required type="text" placeholder="输入活动进行的时长（2小时）"  class="sr">
+									<input required type="datetime-local" name="appointedtime" value="2020-01-01T23:59"  class="sr">
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<label>约定地点：</label>
-									<input required type="text" placeholder="输入活动进行的地点"  class="sr">
+									<input name="place" required type="text" placeholder="输入活动进行的地点"  class="sr">
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label>备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注：</label>
-									<textarea name="beizhu" rows="4" cols="50" wrap="virtual"  class="tr"></textarea>
+									<label>内&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;容：</label>
+									<textarea name="content" rows="4" cols="50" wrap="virtual"  class="tr"></textarea>
 								</td>
 							</tr>
 							<tr align="center">

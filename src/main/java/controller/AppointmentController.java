@@ -24,13 +24,18 @@ public class AppointmentController {
         return appointmentService.build(appointment,model,session);
     }
 
-    @RequestMapping("select")
+    @RequestMapping("/select")
     public String select(int typeid, HttpSession session){
         return appointmentService.select(typeid, session);
     }
 
-    @RequestMapping("search")
+    @RequestMapping("/search")
     public String search(String msg, HttpSession session){
         return appointmentService.search(msg, session);
+    }
+
+    @RequestMapping("/join")
+    public String join(int aid, HttpSession session){
+        return appointmentService.join(aid, session);
     }
 }

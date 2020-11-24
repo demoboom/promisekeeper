@@ -7,6 +7,7 @@
         <typeAlias alias="User" type="po.User"/>
         <typeAlias alias="AppointmentType" type="po.AppointmentType"/>
         <typeAlias alias="Appointment" type="po.Appointment"/>
+        <typeAlias alias="Keeper" type="po.Keeper"/>
     </typeAliases>
     <mappers>
         <!-- 告诉MyBatis到哪里去找映射文件 -->

@@ -3,6 +3,7 @@ package dao;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 import po.Appointment;
+import po.Keeper;
 
 import java.util.List;
 
@@ -13,4 +14,5 @@ public interface AppointmentDao {
     public List<Appointment> selectAppointment();
     public List<Appointment> selectAppointmentByType(int id);
     public List<Appointment> selectAppointmentByTitle(String msg);
+    public int joinAppointment(Keeper keeper);
 }

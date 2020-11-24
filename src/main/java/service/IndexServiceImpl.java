@@ -20,7 +20,6 @@ public class IndexServiceImpl implements IndexService{
 
     @Override
     public String before(Model model, HttpSession session, AppointmentType appointmentType) {
-        session.setAttribute("test", "sucessful");
         session.setAttribute("typelist", indexDao.selectAppointmentType());
         session.setAttribute("appointment", appointmentDao.selectAppointment());
         return "main";

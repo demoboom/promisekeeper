@@ -11,8 +11,26 @@ public class Appointment {
     private String title;           //标题
     private String createtime;      //约定创建时间
     private String appointedtime;   //约定时间
+    private int num;                //约定人数
+    private int hadnum;             //已有人数
     private String place;           //地点
     private String content;         //内容
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public int getHadnum() {
+        return hadnum;
+    }
+
+    public void setHadnum(int hadnum) {
+        this.hadnum = hadnum;
+    }
 
     public int getAid() {
         return aid;

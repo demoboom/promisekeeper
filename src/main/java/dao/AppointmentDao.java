@@ -11,8 +11,8 @@ import java.util.List;
 @Mapper
 public interface AppointmentDao {
     public int build(Appointment appointment);
-    public List<Appointment> selectAppointment();
-    public List<Appointment> selectAppointmentByType(int id);
+    public List<Appointment> selectAppointment(int typeid);
     public List<Appointment> selectAppointmentByTitle(String msg);
     public int joinAppointment(Keeper keeper);
+    public int addNum(int aid);
 }

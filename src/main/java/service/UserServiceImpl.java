@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService{
         }
         if(ruser != null) {
             session.setAttribute("user", ruser);
-            session.setAttribute("appointment", appointmentDao.selectAppointment());
+            model.addAttribute("appointment", appointmentDao.selectAppointment(0));
             return "forward:/before";
         }else {
             model.addAttribute("msg", "用户名或密码错误！");

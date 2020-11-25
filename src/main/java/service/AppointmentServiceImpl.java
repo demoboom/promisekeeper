@@ -21,13 +21,13 @@ public class AppointmentServiceImpl implements AppointmentService {
     public String build(Appointment appointment, Model model, HttpSession session) {
         appointmentDao.build(appointment);
         model.addAttribute("msg","新建成功！");
-        session.setAttribute("appointment", appointmentDao.selectAppointment());
+        model.addAttribute("appointment", appointmentDao.selectAppointment(0));
         return "main";
     }
 
     @Override
-    public String select(int typeid, HttpSession session) {
-        session.setAttribute("appointment", appointmentDao.selectAppointmentByType(typeid));
+    public String select(int typeid, HttpSession session, Model model) {
+        model.addAttribute("appointment", appointmentDao.selectAppointment(typeid));
         return "main";
     }
 
@@ -42,6 +42,7 @@ public class AppointmentServiceImpl implements AppointmentService {
         int uid = MyUtil.getUserId(session);
         Keeper keeper = new Keeper(uid, aid,"待守约");
         appointmentDao.joinAppointment(keeper);
+        appointmentDao.addNum(aid);
         return "main";
     }
 }

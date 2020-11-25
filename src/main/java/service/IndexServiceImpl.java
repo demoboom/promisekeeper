@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import po.AppointmentType;
-import java.util.List;
 import javax.servlet.http.HttpSession;
 
 @Service("indexService")
@@ -21,7 +20,7 @@ public class IndexServiceImpl implements IndexService{
     @Override
     public String before(Model model, HttpSession session, AppointmentType appointmentType) {
         session.setAttribute("typelist", indexDao.selectAppointmentType());
-        session.setAttribute("appointment", appointmentDao.selectAppointment());
+        model.addAttribute("appointment", appointmentDao.selectAppointment(0));
         return "main";
     }
 }

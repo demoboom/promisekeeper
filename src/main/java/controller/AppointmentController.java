@@ -25,8 +25,8 @@ public class AppointmentController {
     }
 
     @RequestMapping("/select")
-    public String select(int typeid, HttpSession session){
-        return appointmentService.select(typeid, session);
+    public String select(int typeid, HttpSession session, Model model){
+        return appointmentService.select(typeid, session, model);
     }
 
     @RequestMapping("/search")

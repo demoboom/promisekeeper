@@ -70,9 +70,9 @@
 	<div class="third">
 		<div class="third_left">
 			<ul class="ul1">
-				<li><a href="List<Appointment>" >全 部</a></li>
+				<li><a href="${pageContext.request.contextPath}/appointment/select?typeid=0" >全 部</a></li>
 				<c:forEach items="${typelist}" var="item">
-					<li><a href="before?typeid=${item.typeid}">${item.typename}</a></li>
+					<li><a href="${pageContext.request.contextPath}/appointment/select?typeid=${item.typeid}">${item.typename}</a></li>
 				</c:forEach>
 			</ul>
 		</div>
@@ -103,7 +103,7 @@
 							<tr>
 								<td>
 									<label>约定时间：</label>
-									<input required type="datetime-local" name="appointedtime" value="2020-01-01T23:59"  class="sr">
+									<input required type="datetime-local" name="appointedtime" class="sr">
 								</td>
 							</tr>
 							<tr>
@@ -131,6 +131,196 @@
 			</div>
 			<div id="fade" class="black_overlay"></div>
 		</div>
+	</div>
+	<div class="container" align="center" >
+		<table id="blocks" class="table table-striped" style="margin-top:25px" border="1" cellpadding="0">
+			<tr>
+			</tr>
+			<c:forEach items="${appointment}" var="al">
+				<tr>
+					<td colspan="5">
+						<div>
+							<div class="left">
+								<h2>${al.title}</h2>
+								<strong>时间：${al.appointedtime} 地点：${al.place}</strong>
+								<p>内容： ${al.content} </p>
+							</div>
+							<div class="right">
+								<button class="cj">参&nbsp; &nbsp;加</button>
+								<p class="ren">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当前人数：${al.hadnum} / ${al.num}</p>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</c:forEach>
+			<tr>
+				<td colspan="5">
+					<div>
+						<div class="left">
+							<h2>15号下午3点C13篮球场打半场1</h2>
+							<strong>时间：2020-12-12T15:00；地点：C13篮球场3号场</strong>
+							<p>备注：养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打</p>
+						</div>
+						<div class="right">
+							<button class="cj">参&nbsp; &nbsp;加</button>
+							<p class="ren">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当前人数：1/10</p>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5">
+					<div>
+						<div class="left">
+							<h2>15号下午3点C13篮球场打半场1</h2>
+							<strong>时间：2020-12-12T15:00；地点：C13篮球场3号场</strong>
+							<p>备注：养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打</p>
+						</div>
+						<div class="right">
+							<button class="cj">参&nbsp; &nbsp;加</button>
+							<p class="ren">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当前人数：1/10</p>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5">
+					<div>
+						<div class="left">
+							<h2>15号下午3点C13篮球场打半场1</h2>
+							<strong>时间：2020-12-12T15:00；地点：C13篮球场3号场</strong>
+							<p>备注：养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打</p>
+						</div>
+						<div class="right">
+							<button class="cj">参&nbsp; &nbsp;加</button>
+							<p class="ren">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当前人数：1/10</p>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5">
+					<div>
+						<div class="left">
+							<h2>15号下午3点C13篮球场打半场1</h2>
+							<strong>时间：2020-12-12T15:00；地点：C13篮球场3号场</strong>
+							<p>备注：养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打</p>
+						</div>
+						<div class="right">
+							<button>参加</button>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5">
+					<div>
+						<div class="left">
+							<h2>15号下午3点C13篮球场打半场1</h2>
+							<strong>时间：2020-12-12T15:00；地点：C13篮球场3号场</strong>
+							<p>备注：养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打</p>
+						</div>
+						<div class="right">
+							<button>参加</button>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5">
+					<div>
+						<div class="left">
+							<h2>15号下午3点C13篮球场打半场1</h2>
+							<strong>时间：2020-12-12T15:00；地点：C13篮球场3号场</strong>
+							<p>备注：养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打</p>
+						</div>
+						<div class="right">
+							<button>参加</button>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5">
+					<div>
+						<div class="left">
+							<h2>15号下午3点C13篮球场打半场1</h2>
+							<strong>时间：2020-12-12T15:00；地点：C13篮球场3号场</strong>
+							<p>备注：养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打</p>
+						</div>
+						<div class="right">
+							<button>参加</button>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5">
+					<div>
+						<div class="left">
+							<h2>15号下午3点C13篮球场打半场1</h2>
+							<strong>时间：2020-12-12T15:00；地点：C13篮球场3号场</strong>
+							<p>备注：养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打</p>
+						</div>
+						<div class="right">
+							<button>参加</button>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5">
+					<div>
+						<div class="left">
+							<h2>15号下午3点C13篮球场打半场1</h2>
+							<strong>时间：2020-12-12T15:00；地点：C13篮球场3号场</strong>
+							<p>备注：养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打</p>
+						</div>
+						<div class="right">
+							<button>参加</button>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5">
+					<div>
+						<div class="left">
+							<h2>15号下午3点C13篮球场打半场1</h2>
+							<strong>时间：2020-12-12T15:00；地点：C13篮球场3号场</strong>
+							<p>备注：养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打</p>
+						</div>
+						<div class="right">
+							<button>参加</button>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5">
+					<div>
+						<div class="left">
+							<h2>15号下午3点C13篮球场打半场1</h2>
+							<strong>时间：2020-12-12T15:00；地点：C13篮球场3号场</strong>
+							<p>备注：养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打养身局，随便打打</p>
+						</div>
+						<div class="right">
+							<button>参加</button>
+						</div>
+					</div>
+				</td>
+			</tr>
+
+		</table>
+
+		<div id="pagiDiv" align="center" style="width:1200px">
+			<span id="spanFirst">首页</span>&nbsp;&nbsp;
+			<span id="spanPre">上一页</span>&nbsp;&nbsp;
+			<span id="spanNext">下一页</span>&nbsp;&nbsp;
+			<span id="spanLast">尾页</span>&nbsp;&nbsp;
+			第&nbsp;<span id="spanPageNum"></span>&nbsp;页/共&nbsp;<span id="spanTotalPage"></span>&nbsp;页
+		</div>
+
 	</div>
 </div>
 </body>

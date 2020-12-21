@@ -14,7 +14,7 @@
         order by unix_timestamp(createtime) desc
     </select>
     <select id="selectAppointmentByTitle" parameterType="String" resultType="Appointment">
-        select * from appointment where title like '%'#{msg}'%'
+        select * from appointment where title like concat('%',#{msg},'%')
     </select>
     <insert id="joinAppointment" parameterType="Keeper">
         insert into keeper values (#{uid}, #{aid}, #{state})

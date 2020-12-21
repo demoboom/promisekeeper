@@ -32,17 +32,18 @@ public class AppointmentServiceImpl implements AppointmentService {
     }
 
     @Override
-    public String search(String msg, HttpSession session) {
-        session.setAttribute("appointment", appointmentDao.selectAppointmentByTitle(msg));
+    public String search(String msg, Model model) {
+        model.addAttribute("appointment", appointmentDao.selectAppointmentByTitle(msg));
         return "main";
     }
 
     @Override
-    public String join(int aid, HttpSession session) {
+    public String join(int aid, HttpSession session, Model model) {
         int uid = MyUtil.getUserId(session);
         Keeper keeper = new Keeper(uid, aid,"待守约");
         appointmentDao.joinAppointment(keeper);
         appointmentDao.addNum(aid);
+        model.addAttribute("appointment", appointmentDao.selectAppointment(0));
         return "main";
     }
 }

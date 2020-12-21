@@ -30,12 +30,12 @@ public class AppointmentController {
     }
 
     @RequestMapping("/search")
-    public String search(String msg, HttpSession session){
-        return appointmentService.search(msg, session);
+    public String search(String msg, Model model){
+        return appointmentService.search(msg, model);
     }
 
     @RequestMapping("/join")
-    public String join(int aid, HttpSession session){
-        return appointmentService.join(aid, session);
+    public String join(int aid, HttpSession session, Model model){
+        return appointmentService.join(aid, session, model);
     }
 }

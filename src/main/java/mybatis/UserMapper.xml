@@ -12,4 +12,7 @@
     <insert id="register" parameterType="User">
 		insert into user values (#{uid}, #{upwd}, #{name}, #{sex}, #{age}, #{tel}, #{email})
 	</insert>
+	<update id="update" parameterType="User">
+		update user set name = #{name}, sex = #{sex}, age = #{age}, tel = #{tel} where uid = #{uid}
+	</update>
 </mapper>

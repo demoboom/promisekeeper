@@ -13,7 +13,7 @@ import java.util.List;
 
 @Service("userService")
 @Transactional
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
     @Autowired
@@ -22,15 +22,15 @@ public class UserServiceImpl implements UserService{
     @Override
     public String register(User user, Model model, HttpSession session) {
         List<User> list = userDao.isExist(user);
-        if(list.size()>0){
+        if (list.size() > 0) {
             model.addAttribute("msg", "用户已存在！");
             return "register";
         }
         int n = userDao.register(user);
-        if(n > 0) {
-            model.addAttribute("msg","注册成功！");
+        if (n > 0) {
+            model.addAttribute("msg", "注册成功！");
             return "login";
-        }else {
+        } else {
             model.addAttribute("msg", "注册失败！");
             return "register";
         }
@@ -40,16 +40,27 @@ public class UserServiceImpl implements UserService{
     public String login(User user, Model model, HttpSession session) {
         User ruser = null;
         List<User> list = userDao.login(user);
-        if(list.size() > 0) {
+        if (list.size() > 0) {
             ruser = list.get(0);
         }
-        if(ruser != null) {
+        if (ruser != null) {
             session.setAttribute("user", ruser);
-            model.addAttribute("appointment", appointmentDao.selectAppointment(0));
             return "forward:/before";
-        }else {
+        } else {
             model.addAttribute("msg", "用户名或密码错误！");
             return "login";
         }
+    }
+
+    @Override
+    public String personal(Model model) {
+        return "personal";
+    }
+
+    @Override
+    public String update(User user, Model model, HttpSession session) {
+        userDao.update(user);
+        session.setAttribute("user", user);
+        return "personal";
     }
 }

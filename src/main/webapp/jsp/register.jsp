@@ -41,7 +41,7 @@
 	<tr>
 	<td>
 	<label>年 龄：</label>
-	<input required type="text" name="age" placeholder="输入你的年龄"  class="sr" maxlength="3" onkeyup="value=value.replace(/\D/g,'')">
+	<input required type="number" name="age" placeholder="输入你的年龄"  class="sr" maxlength="3" onkeyup="value=value.replace(/\D/g,'')">
 	</td>
 	</tr>
 	<tr>
@@ -66,12 +66,6 @@
 	<input required type="password" name="upwd" class="sr" placeholder="输入以设置你的密码">
 	</td>
 	</tr>
-	<tr>
-	<td>
-	<label>E-mail：</label>
-	<input required type="text" name="email" class="sr" placeholder="输入你的电子邮箱">
-	</td>	
-	</tr>
 	<tr align="center">
 	<td>
 	<input type="submit" name="submit" value="注册" class="bt">&nbsp;&nbsp;&nbsp;&nbsp;
@@ -79,7 +73,7 @@
 	</td>
 	</tr>
 	</table>
-	</form>	
+	</form>
 	</div>
 	</div>
 </body>

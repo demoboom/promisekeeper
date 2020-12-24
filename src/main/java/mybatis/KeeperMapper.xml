@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.KeeperDao">
+    <insert id="build" parameterType="Keeper">
+        insert into keeper values (#{uid}, #{aid}, #{state}, 1)
+    </insert>
+    <insert id="join" parameterType="Keeper">
+        insert into keeper values (#{uid}, #{aid}, #{state}, 0)
+    </insert>
+    <select id="isExit" parameterType="Keeper" resultType="java.lang.Integer">
+        select count(*) from keeper where aid = #{aid} and uid = #{uid}
+    </select>
+    <delete id="delete" parameterType="int">
+        delete from keeper where aid = #{aid}
+    </delete>
+    <delete id="quit" parameterType="Keeper">
+        delete from keeper where aid = #{aid} and uid = #{uid}
+    </delete>
+</mapper>

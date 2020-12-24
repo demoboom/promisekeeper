@@ -15,22 +15,7 @@ public class Appointment {
     private int hadnum;             //已有人数
     private String place;           //地点
     private String content;         //内容
-
-    public int getNum() {
-        return num;
-    }
-
-    public void setNum(int num) {
-        this.num = num;
-    }
-
-    public int getHadnum() {
-        return hadnum;
-    }
-
-    public void setHadnum(int hadnum) {
-        this.hadnum = hadnum;
-    }
+    private int uid;                //创建者
 
     public int getAid() {
         return aid;
@@ -72,6 +57,22 @@ public class Appointment {
         this.appointedtime = appointedtime;
     }
 
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public int getHadnum() {
+        return hadnum;
+    }
+
+    public void setHadnum(int hadnum) {
+        this.hadnum = hadnum;
+    }
+
     public String getPlace() {
         return place;
     }
@@ -86,5 +87,13 @@ public class Appointment {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public int getUid() {
+        return uid;
+    }
+
+    public void setUid(int uid) {
+        this.uid = uid;
     }
 }

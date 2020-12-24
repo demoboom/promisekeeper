@@ -14,5 +14,6 @@
         <mapper resource="mybatis/UserMapper.xml" />
         <mapper resource="mybatis/IndexMapper.xml"/>
         <mapper resource="mybatis/AppointMapper.xml"/>
+        <mapper resource="mybatis/KeeperMapper.xml"/>
     </mappers>
 </configuration>

@@ -4,6 +4,7 @@ public class Keeper {
     private int uid;
     private int aid;
     private String state;
+    private int iscreator;
 
     public Keeper(int uid, int aid, String state) {
         this.uid = uid;
@@ -33,5 +34,13 @@ public class Keeper {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public int getIscreator() {
+        return iscreator;
+    }
+
+    public void setIscreator(int iscreator) {
+        this.iscreator = iscreator;
     }
 }

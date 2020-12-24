@@ -17,7 +17,6 @@ public class IndexServiceImpl implements IndexService{
     @Autowired
     AppointmentDao appointmentDao;
 
-    @Override
     public String before(Model model, HttpSession session, AppointmentType appointmentType) {
         session.setAttribute("typelist", indexDao.selectAppointmentType());
         model.addAttribute("appointment", appointmentDao.selectAppointment(0));

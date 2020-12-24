@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import po.Appointment;
+import po.User;
 import service.AppointmentService;
 import util.MyUtil;
 
@@ -35,8 +36,23 @@ public class AppointmentController {
         return appointmentService.search(msg, model);
     }
 
-    @RequestMapping("/join")
-    public String join(int aid, HttpSession session, Model model){
-        return appointmentService.join(aid, session, model);
+    @RequestMapping("/update")
+    public String update(Appointment appointment, Model model, HttpSession session){
+        return appointmentService.update(appointment, model, session);
+    }
+    
+    @RequestMapping("/edit")
+    public String edit(int aid, Model model, HttpSession session){
+        return appointmentService.edit(aid, model, session);
+    }
+    
+    @RequestMapping("/delete")
+    public String delete(int aid, Model model, HttpSession session){
+        return appointmentService.delete(aid, model, session);
+    }
+
+    @RequestMapping("/joined")
+    public String joined(Model model, HttpSession session){
+        return appointmentService.joined(model, session);
     }
 }

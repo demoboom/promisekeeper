@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ page import="po.AppointmentType" %>
 <!doctype html>
 <html>
 <head>
@@ -24,7 +23,7 @@
 		.third_left{width: 50%;float: left;background-color: gray}
 		.third_right{width: 50%;float: left;background-color: gray}
 		#search1{float: right; outline-style: none;border-radius: 5px;border: 3px outset;height: 40px;width:50px;margin-top: 20px;margin-right: 50px}
-		#search2{float: right; outline-style: none;border-radius: 5px;border: 2px;height: 40px;width:250px;margin-top: 15px;padding: 2px}
+		#search2{float: right; outline-style: none;border-radius: 5px;border: 2px;height: 40px;width:250px;margin-top: 18px;padding: 2px;margin-right: 8px}
 		.ul1 { list-style:none;padding:0 80px; margin:0;overflow: hidden;font-size: 36px;height: 100%}
 		li {float: left}
 		li a {display: block;color: white;text-align: center;padding:0px 26px;text-decoration: none;}
@@ -47,6 +46,9 @@
 		table th{text-align: left;height: 30px;padding: 5px;margin: 0;border: 0px;}
 		table td{text-align: left;height:30px; margin: 0;padding: 5px;border:0px}
 		table tr:hover{background: #eeeeee;}
+		.r{height: 10px;border: 0px}
+		.d{height: 10px;border: 0px}
+		.tip{color:indianred}
 		.span6{float:inherit;margin:10px;}
 		#pagiDiv span{border-radius: .2em;padding:5px;}
 		.left{float: left;width: 75%}
@@ -61,12 +63,15 @@
 	<script type="text/javascript" src="pagination.js"></script>
 	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
 	<script type="text/javascript">
+
 		function popWin(){
 			document.getElementById('light').style.display='block';
 			document.getElementById('fade').style.display='block'}
 		function closeWin() {
 			document.getElementById('light').style.display = 'none';
 			document.getElementById('fade').style.display = 'none'}
+
+
 		//全局变量
 		var numCount;       //数据总数量
 		var columnsCounts;  //数据列数量
@@ -236,7 +241,7 @@
 	<div class="top">
 		<div class="top_right">
 			<a href="${pageContext.request.contextPath}/user/exit"><button class="quit" onClick="">退出</button></a>
-			<a href="${pageContext.request.contextPath}/"><button class="quit" onClick="">我的约定</button></a>
+			<a href="${pageContext.request.contextPath}/user/mine"><button class="quit" onClick="">约定管理</button></a>
 			<a href="${pageContext.request.contextPath}/user/personal"><button class="quit" onClick="" >个人中心</button></a>
 		</div>
 	</div>
@@ -324,7 +329,7 @@
 	</div>
 	<div class="container" align="center" >
 		<table id="blocks" class="table table-striped" style="margin-top:25px" border="1" cellpadding="0">
-
+			<tr class="r"><td class="d"><div align="center" class="tip">${msg }</div></td></tr>
 			<c:forEach items="${appointment}" var="al">
 				<tr>
 					<td colspan="5" >
@@ -335,18 +340,14 @@
 								<p>内容： ${al.content} </p>
 							</div>
 							<div class="right">
-								<button class="cj">参&nbsp; &nbsp;加</button>
+								<a href="${pageContext.request.contextPath}/keeper/join?aid=${al.aid}"><button class="cj">参&nbsp; &nbsp;加</button></a>
 								<p class="ren">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当前人数：${al.hadnum} / ${al.num}</p>
 							</div>
 						</div>
 					</td>
 				</tr>
 			</c:forEach>
-
-
-
 		</table>
-
 		<div id="pagiDiv" align="center" style="width:1200px">
 			<span id="spanFirst">首页</span>&nbsp;&nbsp;
 			<span id="spanPre">上一页</span>&nbsp;&nbsp;

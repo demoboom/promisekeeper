@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import po.Appointment;
 import po.User;
 import service.UserService;
 import util.MyUtil;
@@ -31,6 +30,11 @@ public class UserController {
     @RequestMapping("/personal")
     public String personal(Model model){
         return userService.personal(model);
+    }
+
+    @RequestMapping("/mine")
+    public String mine(Model model, HttpSession session){
+        return userService.mine(session, model);
     }
 
     @RequestMapping("/update")

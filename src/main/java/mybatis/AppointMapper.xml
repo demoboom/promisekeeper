@@ -3,8 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="dao.AppointmentDao">
-    <insert id="build" parameterType="Appointment">
-        insert into appointment values (null, #{typeid}, #{title}, #{createtime}, #{appointedtime}, #{num}, 0, #{place}, #{content})
+    <insert id="build" parameterType="Appointment" useGeneratedKeys="true" keyProperty="aid">
+        insert into appointment values (null, #{typeid}, #{title}, #{createtime}, #{appointedtime}, #{num}, 1, #{place}, #{content})
     </insert>
     <select id="selectAppointment" resultType="Appointment">
         select * from appointment where 1 = 1
@@ -16,10 +16,28 @@
     <select id="selectAppointmentByTitle" parameterType="String" resultType="Appointment">
         select * from appointment where title like concat('%',#{msg},'%')
     </select>
-    <insert id="joinAppointment" parameterType="Keeper">
-        insert into keeper values (#{uid}, #{aid}, #{state})
-    </insert>
+    <select id="selectJoined" parameterType="int" resultType="Appointment">
+        select * from appointment where aid in (select aid from keeper where uid = #{uid} and iscreator = 0)
+    </select>
+    <select id="selectCreated" parameterType="int" resultType="Appointment">
+        select * from appointment where aid in (select aid from keeper where uid = #{uid} and iscreator = 1)
+    </select>
+    <select id="selectAppointmentByAid" parameterType="int" resultType="Appointment">
+        select * from appointment where aid  = #{aid}
+    </select>
     <update id="addNum" parameterType="int">
         update appointment set hadnum = hadnum + 1 where aid = #{aid}
     </update>
+    <update id="subNum" parameterType="int">
+        update appointment set hadnum = hadnum - 1 where aid = #{aid}
+    </update>
+    <update id="update" parameterType="Appointment">
+        update appointment set typeid = #{typeid}, title = #{title}, place = #{place}, num = #{num}, content = #{content} where aid = #{aid}
+    </update>
+    <select id="isEnough" parameterType="int" resultType="java.lang.Integer">
+        select count(*) from  appointment where aid = #{aid} and num = hadnum
+    </select>
+    <delete id="delete" parameterType="int">
+        delete from appointment where aid = #{aid}
+    </delete>
 </mapper>

@@ -1,6 +1,7 @@
 package service;
 
 import dao.AppointmentDao;
+import dao.KeeperDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,34 +17,52 @@ import javax.servlet.http.HttpSession;
 public class AppointmentServiceImpl implements AppointmentService {
     @Autowired
     AppointmentDao appointmentDao;
+    @Autowired
+    KeeperDao keeperDao;
 
-    @Override
     public String build(Appointment appointment, Model model, HttpSession session) {
+        appointment.setUid(MyUtil.getUserId(session));
         appointmentDao.build(appointment);
+        Keeper keeper = new Keeper(MyUtil.getUserId(session), appointment.getAid(), "待守约");
+        keeperDao.build(keeper);
         model.addAttribute("msg","新建成功！");
         model.addAttribute("appointment", appointmentDao.selectAppointment(0));
         return "main";
     }
 
-    @Override
     public String select(int typeid, HttpSession session, Model model) {
         model.addAttribute("appointment", appointmentDao.selectAppointment(typeid));
         return "main";
     }
 
-    @Override
     public String search(String msg, Model model) {
         model.addAttribute("appointment", appointmentDao.selectAppointmentByTitle(msg));
         return "main";
     }
 
+    public String update(Appointment appointment, Model model, HttpSession session) {
+        appointmentDao.update(appointment);
+        model.addAttribute("appointment", appointmentDao.selectCreated(MyUtil.getUserId(session)));
+        return "created";
+    }
+    
+    public String edit(int aid, Model model, HttpSession session) {
+        model.addAttribute("aid", aid);
+        model.addAttribute("appoint", appointmentDao.selectAppointmentByAid(aid).get(0));
+        return "edit";
+    }
+    
+    public String delete(int aid, Model model, HttpSession session) {
+    	keeperDao.delete(aid);
+        appointmentDao.delete(aid);
+        model.addAttribute("appointment", appointmentDao.selectCreated(MyUtil.getUserId(session)));
+        return "created";
+    }
+
     @Override
-    public String join(int aid, HttpSession session, Model model) {
+    public String joined(Model model, HttpSession session) {
         int uid = MyUtil.getUserId(session);
-        Keeper keeper = new Keeper(uid, aid,"待守约");
-        appointmentDao.joinAppointment(keeper);
-        appointmentDao.addNum(aid);
-        model.addAttribute("appointment", appointmentDao.selectAppointment(0));
-        return "main";
+        model.addAttribute("appointment", appointmentDao.selectJoined(uid));
+        return "joined";
     }
 }

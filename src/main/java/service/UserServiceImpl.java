@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import po.User;
+import util.MyUtil;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -19,7 +20,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private AppointmentDao appointmentDao;
 
-    @Override
     public String register(User user, Model model, HttpSession session) {
         List<User> list = userDao.isExist(user);
         if (list.size() > 0) {
@@ -36,7 +36,6 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    @Override
     public String login(User user, Model model, HttpSession session) {
         User ruser = null;
         List<User> list = userDao.login(user);
@@ -52,12 +51,15 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    @Override
     public String personal(Model model) {
         return "personal";
     }
 
-    @Override
+    public String mine(HttpSession session, Model model) {
+        model.addAttribute("appointment", appointmentDao.selectCreated(MyUtil.getUserId(session)));
+        return "created";
+    }
+
     public String update(User user, Model model, HttpSession session) {
         userDao.update(user);
         session.setAttribute("user", user);
